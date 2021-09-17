@@ -29,6 +29,30 @@ p {
   margin: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+address {
+  font-style: normal;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -63,14 +87,50 @@ p {
 
 .benefits,
 .what-we-do,
-.team {
+.team,
+.projects {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.display-block {
-  display: block;
+.benefits .item,
+.what-we-do .item,
+.team .item,
+.project-card {
+  width: 370px;
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
+
+.benefits .item,
+.team .item {
+  width: 270px;
+}
+
+.benefits .item:nth-child(4n),
+.team .item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.benefits .item:nth-last-child(-n + 4),
+.team .item:nth-last-child(-n + 4) {
+  margin-bottom: 0;
+}
+
+.what-we-do .item:nth-child(3n),
+.project-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.what-we-do .item:nth-last-child(-n + 3),
+.project-card:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
+/* .what-we-do .item,
+.project-card {
+  
+} */
 
 /*  Logo */
 .logo {
@@ -79,7 +139,6 @@ p {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
-  text-decoration: none;
 }
 
 .logo.footer {
@@ -118,7 +177,6 @@ p {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  text-decoration: none;
 }
 
 .contacts-menu .contact {
@@ -154,11 +212,9 @@ p {
 
 .address .contact {
   color: var(--text-white-opacity);
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
-  text-decoration: none;
 }
 
 .address .contact.margin {
@@ -256,11 +312,6 @@ p {
 }
 
 /* Benefit section */
-
-.benefits .item {
-  width: 270px;
-}
-
 .benefits .title {
   margin-bottom: 10px;
   color: var(--primary-black-color);
@@ -304,29 +355,6 @@ p {
 }
 
 /* Portfolio page */
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.project-card {
-  width: 370px;
-  margin-right: 30px;
-  margin-bottom: 30px;
-}
-
-.project-card:nth-child(3n) {
-  margin-right: 0;
-}
-
-.project-card:nth-last-child(-n + 3) {
-  margin-bottom: 0;
-}
-
-.project {
-  text-decoration: none;
-}
-
 .substrate {
   background-color: var(--primary-white-color);
   padding: 20px 24px;
